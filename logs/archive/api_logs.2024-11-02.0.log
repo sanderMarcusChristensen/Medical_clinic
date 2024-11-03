@@ -1,0 +1,59 @@
+17:44:01.762 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+17:44:01.765 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+17:44:19.486 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+17:44:19.488 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+17:44:29.808 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[admin, user])
+17:44:29.810 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[admin, user])
+10:50:31.295 [JettyServerThreadPool-52] WARN  dat.config.ApplicationConfig - An API exception occurred: Code: 400, Message: User with username: usertest already exists
+10:53:29.200 [JettyServerThreadPool-52] WARN  dat.config.ApplicationConfig - An API exception occurred: Code: 400, Message: User with username: UserSander already exists
+10:54:31.148 [JettyServerThreadPool-52] WARN  dat.config.ApplicationConfig - An API exception occurred: Code: 400, Message: User with username: UserSander already exists
+10:56:45.276 [JettyServerThreadPool-23] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+10:56:45.279 [JettyServerThreadPool-23] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user2, password=null, roles=[user])
+13:51:22.291 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[user])
+13:51:22.294 [JettyServerThreadPool-22] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[user])
+13:51:28.150 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[user])
+13:51:28.152 [JettyServerThreadPool-25] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[user])
+13:51:37.719 [JettyServerThreadPool-28] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[admin, user])
+13:51:37.720 [JettyServerThreadPool-28] INFO  d.s.controllers.SecurityController - User verified: UserDTO(username=user3, password=null, roles=[admin, user])
+15:18:41.292 [JettyServerThreadPool-22] ERROR dat.controller.ExceptionController - 400 Invalid date format or missing 'from'/'to' parameters.
+15:19:21.471 [JettyServerThreadPool-27] ERROR dat.controller.ExceptionController - 400 Invalid date format or missing 'from'/'to' parameters.
+15:21:39.887 [JettyServerThreadPool-25] ERROR dat.controller.ExceptionController - 500 Server error while retrieving doctors by birthdate range.
+15:22:18.545 [JettyServerThreadPool-24] ERROR dat.controller.ExceptionController - 500 Server error while retrieving doctors by birthdate range.
+15:22:50.190 [JettyServerThreadPool-28] ERROR dat.controller.ExceptionController - 500 Server error while retrieving doctors by birthdate range.
+15:23:43.317 [JettyServerThreadPool-29] ERROR dat.controller.ExceptionController - 500 Server error while retrieving doctors by birthdate range.
+15:26:32.094 [JettyServerThreadPool-27] ERROR dat.controller.ExceptionController - 500 Server error while updating doctor data.
+15:26:45.429 [JettyServerThreadPool-28] ERROR dat.controller.ExceptionController - 500 Server error while updating doctor data.
+15:26:57.235 [JettyServerThreadPool-29] ERROR dat.controller.ExceptionController - 500 Server error while updating doctor data.
+15:27:14.025 [JettyServerThreadPool-29] ERROR dat.controller.ExceptionController - 500 Server error while updating doctor data.
+15:30:47.304 [JettyServerThreadPool-29] ERROR dat.controller.ExceptionController - 404 Plant with that id not found 
+15:32:33.524 [JettyServerThreadPool-23] ERROR dat.controller.ExceptionController - 404 Plant with that id not found 
+15:32:53.731 [JettyServerThreadPool-25] ERROR dat.controller.ExceptionController - 404 Plant with that id not found 
+15:33:14.834 [JettyServerThreadPool-22] ERROR dat.controller.ExceptionController - 400 Invalid speciality provided.
+15:34:08.080 [JettyServerThreadPool-23] ERROR dat.controller.ExceptionController - 404 Plant with that id not found 
+15:34:17.855 [JettyServerThreadPool-25] ERROR dat.controller.ExceptionController - 500 Server error while retrieving doctors by birthdate range.
+15:38:06.678 [JettyServerThreadPool-29] ERROR dat.config.ApplicationConfig - 400,Cannot invoke "String.isEmpty()" because the return value of "dat.dto.DoctorDTO.getName()" is null
+15:38:23.593 [JettyServerThreadPool-24] ERROR dat.config.ApplicationConfig - 400,Cannot invoke "String.isEmpty()" because the return value of "dat.dto.DoctorDTO.getName()" is null
+15:38:32.096 [JettyServerThreadPool-25] ERROR dat.controller.ExceptionController - 400 Invalid name provided, doctor needs a name.
+15:39:03.926 [JettyServerThreadPool-22] ERROR dat.controller.ExceptionController - 500 Server error while updating doctor data.
+17:48:32.234 [JettyServerThreadPool-29] ERROR dat.config.ApplicationConfig - 400,Cannot invoke "jakarta.persistence.EntityManagerFactory.createEntityManager()" because "this.emf" is null
+17:52:33.232 [JettyServerThreadPool-28] ERROR dat.config.ApplicationConfig - 400,Cannot invoke "jakarta.persistence.EntityManagerFactory.createEntityManager()" because "this.emf" is null
+17:52:44.149 [JettyServerThreadPool-24] ERROR dat.config.ApplicationConfig - 400,Cannot invoke "jakarta.persistence.EntityManagerFactory.createEntityManager()" because "this.emf" is null
+17:52:48.860 [JettyServerThreadPool-25] ERROR dat.controller.ExceptionController - 404 Plant with that id not found 
+17:52:56.188 [JettyServerThreadPool-22] ERROR dat.config.ApplicationConfig - 400,Cannot invoke "jakarta.persistence.EntityManagerFactory.createEntityManager()" because "this.emf" is null
+17:55:23.903 [JettyServerThreadPool-29] ERROR dat.config.ApplicationConfig - 400,Cannot invoke "jakarta.persistence.EntityManagerFactory.createEntityManager()" because "this.emf" is null
+17:59:47.127 [JettyServerThreadPool-23] ERROR dat.config.ApplicationConfig - 400,Cannot invoke "jakarta.persistence.EntityManagerFactory.createEntityManager()" because "this.emf" is null
+18:03:10.248 [JettyServerThreadPool-29] ERROR dat.config.ApplicationConfig - 400,Cannot invoke "jakarta.persistence.EntityManagerFactory.createEntityManager()" because "this.emf" is null
+18:03:15.888 [JettyServerThreadPool-24] ERROR dat.controller.ExceptionController - 404 Plant with that id not found 
+18:03:20.788 [JettyServerThreadPool-26] ERROR dat.controller.ExceptionController - 404 Plant with that id not found 
+18:03:26.479 [JettyServerThreadPool-22] ERROR dat.config.ApplicationConfig - 400,Cannot invoke "jakarta.persistence.EntityManagerFactory.createEntityManager()" because "this.emf" is null
+18:10:04.176 [JettyServerThreadPool-29] ERROR dat.controller.ExceptionController - 404 Doctors not found in list
+18:10:13.943 [JettyServerThreadPool-24] ERROR dat.controller.ExceptionController - 404 Doctors not found in list
+18:13:56.091 [JettyServerThreadPool-29] ERROR dat.controller.ExceptionController - 404 Plant with that id not found 
+18:14:03.836 [JettyServerThreadPool-24] ERROR dat.controller.ExceptionController - 404 Plant with that id not found 
+18:14:26.485 [JettyServerThreadPool-25] ERROR dat.controller.ExceptionController - 500 Server error while retrieving doctors by speciality.
+18:14:36.392 [JettyServerThreadPool-22] ERROR dat.controller.ExceptionController - 500 Server error while retrieving doctors by birthdate range.
+18:14:41.528 [JettyServerThreadPool-24] ERROR dat.controller.ExceptionController - 500 something went wrong while creating the doctor.
+18:20:32.763 [JettyServerThreadPool-22] ERROR dat.controller.ExceptionController - 500 Server error while retrieving doctors by birthdate range.
+18:20:37.982 [JettyServerThreadPool-28] ERROR dat.controller.ExceptionController - 500 something went wrong while creating the doctor.
+18:21:51.009 [JettyServerThreadPool-29] ERROR dat.controller.ExceptionController - 500 something went wrong while creating the doctor.
+20:44:16.610 [JettyServerThreadPool-52] ERROR dat.controller.ExceptionController - 500 something went wrong while creating the doctor.

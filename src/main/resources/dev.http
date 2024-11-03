@@ -1,0 +1,108 @@
+### A simple get request to the test endpoint. No need for login
+GET {{url}}/auth/test/
+
+### Create a new user - this one will only get a USER role by default
+POST {{url}}/auth/register/
+
+{
+    "username": "user2",
+    "password": "test123"
+}
+
+###
+POST {{url}}/auth/login/
+
+{
+    "username": "user2",
+    "password": "test123"
+}
+
+> {%
+    client.global.set("jwt_token", response.body.token);
+    console.log("JWT Token:", client.global.get("jwt_token"));
+%}
+
+###
+GET {{url}}/protected/user_demo/
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+###
+GET {{url}}/protected/admin_demo/
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+### Add admin role to user
+POST {{url}}/auth/user/addrole/
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+    "role": "admin"
+}
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+###
+
+# huske at sætte :
+#Accept: application/json
+#Authorization: Bearer {{jwt_token}}, på all endpoints der har security på
+
+# ---------------------- DOCTOR Endpoints ----------------------
+
+GET localhost:7007/api/doctor
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+###
+
+GET localhost:7007/api/doctor/1
+
+###
+
+GET localhost:7007/api/doctor/speciality/SURGERY
+
+###
+
+#dont work right now
+GET http://localhost:7007/api/doctor/birthdate/range?from=2000-01-01&to=2005-12-31
+
+###
+
+#huske at slette id når du kommer til database
+POST localhost:7007/api/doctor
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{jwt_token}}
+
+{
+  "name": "Dr. David Park",
+  "dateOfBirth": "1990-05-15",
+  "yearOfGraduation": 2015,
+  "nameOfClinic": "Skynet Medical Center",
+  "speciality": "SURGERY"
+}
+
+###
+
+PUT localhost:7007/api/doctor/1
+Content-Type: application/json
+
+{
+  "name": "Dr. Alice Smith",
+  "dateOfBirth": [
+    1979,
+    5,
+    29
+  ],
+  "yearOfGraduation": 2006,
+  "nameOfClinic": "Summit Health Institute",
+  "speciality": "FAMILY_MEDICINE"
+}
+
+###
+
+
+
+
