@@ -1,6 +1,7 @@
 package dat.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dat.dto.AppointmentDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -32,6 +33,7 @@ public class Appointment {
 
     @ManyToOne
     @JoinColumn(name = "doctor_id", nullable = false) // Foreign key column in the appointment table
+
     private Doctor doctor; // Reference to the Doctor entity
 
     public Appointment(String clientName, LocalDate date, LocalTime time, String comment, Doctor doctor) {

@@ -1,6 +1,8 @@
 package dat.dao;
 
+import dat.dto.AppointmentDTO;
 import dat.dto.DoctorDTO;
+import dat.entities.Appointment;
 import dat.entities.Doctor;
 import dat.entities.Speciality;
 import dat.exceptions.ApiException;
@@ -34,11 +36,11 @@ public class DoctorDAO implements IDAO<DoctorDTO, Long> {
         try (EntityManager em = emf.createEntityManager()) {
             TypedQuery<Doctor> query = em.createQuery("SELECT d FROM Doctor d", Doctor.class);
             List<Doctor> doctorList = query.getResultList();
-            List<DoctorDTO> plantDTOs = new ArrayList<>();
+            List<DoctorDTO> doctorDTOS = new ArrayList<>();
             for (Doctor doctor : doctorList) {
-                plantDTOs.add(new DoctorDTO(doctor));
+                doctorDTOS.add(new DoctorDTO(doctor));
             }
-            return plantDTOs;
+            return doctorDTOS;
         }
     }
 
@@ -170,6 +172,26 @@ public class DoctorDAO implements IDAO<DoctorDTO, Long> {
         } catch (Exception e) {
             e.printStackTrace(); // Log the error
             throw new RuntimeException("Failed to retrieve doctors by birthdate range: " + e.getMessage());
+        }
+    }
+
+
+
+// ------------------------   Appointment ------------------------------------
+
+
+
+    public List<AppointmentDTO> getAllAppointment() {
+        try (EntityManager em = emf.createEntityManager()) {
+            TypedQuery<Appointment> query = em.createQuery("SELECT d FROM Appointment d", Appointment.class);
+            List<Appointment> list = query.getResultList();
+
+            List<AppointmentDTO> dto = new ArrayList<>();
+
+            for (Appointment a : list) {
+                dto.add(new AppointmentDTO(a));
+            }
+            return dto;
         }
     }
 

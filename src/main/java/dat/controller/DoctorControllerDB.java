@@ -3,6 +3,7 @@ package dat.controller;
 import dat.config.HibernateConfig;
 import dat.dao.DoctorDAO;
 import dat.dao.DoctorMockDAO;
+import dat.dto.AppointmentDTO;
 import dat.dto.DoctorDTO;
 import dat.entities.Speciality;
 import dat.exceptions.ApiException;
@@ -146,6 +147,22 @@ public class DoctorControllerDB {
         } catch (Exception e) {
             throw new ApiException(500, "Server error while updating doctor data.");  // Catch any other errors
         }
+    }
+
+
+
+
+// ------------------------   Appointment ------------------------------------
+
+    public void getAllAppointment(Context ctx) {
+
+        List<AppointmentDTO> dto = dao.getAllAppointment();
+
+        if (dto.isEmpty()) {
+            throw new ApiException(404, "getAllAppointment not found in list");
+        }
+        ctx.json(dto);
+        ctx.status(200);
     }
 
 

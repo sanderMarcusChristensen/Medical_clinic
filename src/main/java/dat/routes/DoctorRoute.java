@@ -23,12 +23,19 @@ public class DoctorRoute {
     public EndpointGroup getDoctorRoutes() {
         return () -> {
 
-            get("/", controller::getAll, Role.ANYONE);    // only users can see the full list
+            get("/", controller::getAll, Role.ANYONE);
             get("/{id}", controller::getById, Role.ANYONE);
             get("/speciality/{speciality}", controller::doctorBySpeciality, Role.ANYONE);
             get("/birthdate/range", controller::doctorByBirthdateRange, Role.ANYONE);
-            post("/", controller::createDoctor, Role.ANYONE);    // only an admin can create
+            post("/", controller::createDoctor, Role.ANYONE);
             put("/{id}", controller::update, Role.ANYONE);
+
+
+            // ------------------------   Appointment ------------------------------------
+
+            get("/appointment/appointment", controller::getAllAppointment, Role.ANYONE);
+
+
 
         };
     }
