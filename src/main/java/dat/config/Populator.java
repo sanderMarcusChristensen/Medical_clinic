@@ -10,7 +10,7 @@ import jakarta.persistence.EntityManagerFactory;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public  class Populator {
+public class Populator {
 
     private final EntityManagerFactory emf;
 
@@ -34,6 +34,27 @@ public  class Populator {
         doctor2.setNameOfClinic("Downtown Medical Center");
         doctor2.setSpeciality(Speciality.SURGERY);
 
+        Doctor doctor3 = new Doctor();
+        doctor3.setName("Dr. Carol Adams");
+        doctor3.setDateOfBirth(LocalDate.of(1985, 3, 15));
+        doctor3.setYearOfGraduation(2010);
+        doctor3.setNameOfClinic("Westside Health Center");
+        doctor3.setSpeciality(Speciality.PEDIATRICS);
+
+        Doctor doctor4 = new Doctor();
+        doctor4.setName("Dr. David Brown");
+        doctor4.setDateOfBirth(LocalDate.of(1978, 10, 22));
+        doctor4.setYearOfGraduation(2003);
+        doctor4.setNameOfClinic("Eastside Clinic");
+        doctor4.setSpeciality(Speciality.PSYCHIATRY);
+
+        Doctor doctor5 = new Doctor();
+        doctor5.setName("Dr. Emily White");
+        doctor5.setDateOfBirth(LocalDate.of(1990, 6, 7));
+        doctor5.setYearOfGraduation(2015);
+        doctor5.setNameOfClinic("Northside Medical Center");
+        doctor5.setSpeciality(Speciality.GERIATRICS);
+
         // Create appointments for doctor1
         Appointment appointment1_1 = new Appointment("John Doe", LocalDate.of(2023, 11, 24), LocalTime.of(9, 45), "First visit", doctor1);
         Appointment appointment1_2 = new Appointment("Jane Doe", LocalDate.of(2023, 11, 30), LocalTime.of(11, 30), "Routine checkup", doctor1);
@@ -46,16 +67,43 @@ public  class Populator {
         doctor2.addAppointment(appointment2_1);
         doctor2.addAppointment(appointment2_2);
 
+        // Create appointments for doctor3
+        Appointment appointment3_1 = new Appointment("Chris Martin", LocalDate.of(2023, 12, 1), LocalTime.of(9, 0), "Child checkup", doctor3);
+        Appointment appointment3_2 = new Appointment("Laura Davis", LocalDate.of(2023, 12, 3), LocalTime.of(10, 15), "Vaccination", doctor3);
+        doctor3.addAppointment(appointment3_1);
+        doctor3.addAppointment(appointment3_2);
+
+        // Create appointments for doctor4
+        Appointment appointment4_1 = new Appointment("Henry Clark", LocalDate.of(2023, 12, 5), LocalTime.of(11, 0), "Skin rash", doctor4);
+        Appointment appointment4_2 = new Appointment("Sophia Moore", LocalDate.of(2023, 12, 7), LocalTime.of(14, 30), "Allergy test", doctor4);
+        doctor4.addAppointment(appointment4_1);
+        doctor4.addAppointment(appointment4_2);
+
+        // Create appointments for doctor5
+        Appointment appointment5_1 = new Appointment("Oliver Johnson", LocalDate.of(2023, 12, 10), LocalTime.of(13, 0), "Heart checkup", doctor5);
+        Appointment appointment5_2 = new Appointment("Isabella Brown", LocalDate.of(2023, 12, 14), LocalTime.of(15, 0), "Routine ECG", doctor5);
+        doctor5.addAppointment(appointment5_1);
+        doctor5.addAppointment(appointment5_2);
+
         // Persist the doctors (and their appointments)
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
             em.persist(doctor1);
             em.persist(doctor2);
+            em.persist(doctor3);
+            em.persist(doctor4);
+            em.persist(doctor5);
             em.persist(appointment1_1);
             em.persist(appointment1_2);
             em.persist(appointment2_1);
             em.persist(appointment2_2);
+            em.persist(appointment3_1);
+            em.persist(appointment3_2);
+            em.persist(appointment4_1);
+            em.persist(appointment4_2);
+            em.persist(appointment5_1);
+            em.persist(appointment5_2);
             em.getTransaction().commit();
         } catch (Exception e) {
             if (em.getTransaction().isActive()) {
