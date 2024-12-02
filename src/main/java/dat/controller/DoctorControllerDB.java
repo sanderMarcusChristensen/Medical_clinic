@@ -43,11 +43,11 @@ public class DoctorControllerDB {
                 ctx.json(dto);
                 ctx.status(200);
             } else {
-                throw new ApiException(400, "Failed to get plant");
+                throw new ApiException(400, "Failed to get Doctor");
             }
 
         } catch (Exception e) {
-            throw new ApiException(404, "Plant with that id not found ");
+            throw new ApiException(404, " Doctors with that id not found ");
         }
 
     }

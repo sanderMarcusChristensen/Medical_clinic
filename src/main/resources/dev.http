@@ -5,7 +5,7 @@ GET {{url}}/auth/test/
 POST {{url}}/auth/register/
 
 {
-    "username": "user2",
+    "username": "user",
     "password": "test123"
 }
 
@@ -13,7 +13,7 @@ POST {{url}}/auth/register/
 POST {{url}}/auth/login/
 
 {
-    "username": "user2",
+    "username": "user",
     "password": "test123"
 }
 
@@ -102,6 +102,9 @@ Content-Type: application/json
 }
 
 ###
+
+GET localhost:7007/api/doctor/appointment/appointment
+
 
 
 

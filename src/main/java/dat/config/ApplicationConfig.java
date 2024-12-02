@@ -37,6 +37,8 @@ public class ApplicationConfig {
         Javalin app = Javalin.create(ApplicationConfig::configuration);
 
         app.beforeMatched(accessController::accessHandler);
+        app.before(ApplicationConfig::corsHeaders);
+        app.options("/*", ApplicationConfig::corsHeadersOptions);
 
         app.beforeMatched(ctx -> accessController.accessHandler(ctx));
 
@@ -74,4 +76,20 @@ public class ApplicationConfig {
             ctx.result(e.getMessage());
         });
     }
+
+    private static void corsHeaders(Context ctx) {
+        ctx.header("Access-Control-Allow-Origin", "*");
+        ctx.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        ctx.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        ctx.header("Access-Control-Allow-Credentials", "true");
+    }
+
+    private static void corsHeadersOptions(Context ctx) {
+        ctx.header("Access-Control-Allow-Origin", "*");
+        ctx.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        ctx.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        ctx.header("Access-Control-Allow-Credentials", "true");
+        ctx.status(204);
+    }
+
 }
