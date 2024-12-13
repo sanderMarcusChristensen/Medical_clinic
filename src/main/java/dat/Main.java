@@ -17,7 +17,7 @@ public class Main {
         ApplicationConfig.startServer(ApiProperties.PORT);
         populator.populate();
 
-        //D
+        // populate database
 
     }
 }
